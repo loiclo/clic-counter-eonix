@@ -15,13 +15,16 @@ function Home (){
 
   return (
     <div>
-      <button onClick={onIncrement}>
-        Vous avez cliqué {counter} fois
-      </button>
+    Vous avez cliqué {counter} fois
+      <div>
+        <button onClick={onIncrement}>
+          Cliquer ici
+        </button>
 
-      <button onClick={onDecrement} disabled={counter === 0}>
-       Annuler votre clic {counter}
-      </button>
+        <button onClick={onDecrement} disabled={counter === 0}> 
+        Annuler votre clic
+        </button>
+      </div>
     </div>
   )
 }
