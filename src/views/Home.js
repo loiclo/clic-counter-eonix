@@ -1,19 +1,11 @@
-import React, {useState} from 'react';
+import React from 'react';
+import Counter from '../components/Counter';
 
-function Home (){
-  const [counter, setCounter] = useState(0); // Initialise le compteur à 0
-
-  const onIncrement = () => {
-    setCounter(counter + 1); // Incrémente le compteur 
-  };
-
+function Home() {
   return (
     <div>
-      <button onClick={onIncrement}>
-        Vous avez cliqué {counter} fois
-      </button>
+      <Counter />
     </div>
-  )
+  );
 }
-
 export default Home;
