@@ -1,0 +1,14 @@
+body {
+    background-color: #0F3460;
+    color: #FFFF;
+    font-family: "Source Code Pro", monospace;
+    font-size: 20px;
+    overflow: hidden;
+    animation: fadeIn 1.5s ease-in-out;
+  }
+
+  h1 {
+    font-family: "Source Code Pro", monospace;
+    font-size: 45px;
+  }
+

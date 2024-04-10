@@ -4,6 +4,13 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import configureStore from './configureStore';
 import history from './utils/history';
 import Home from './containers/HomeContainer';
+import styled from 'styled-components';
+
+// Styled component for the title
+const Title = styled.h1`
+  text-align: center;
+  margin-top: 50px;
+`;
 
 // Create redux store with history
 const initialState = {};
@@ -14,7 +21,7 @@ class App extends Component {
     return (
       <Provider store={store}>
         <Router>
-          <h1>Clic Counter</h1>
+          <Title>Clic Counter</Title> {/* Use the styled Title component here */}
           <Switch>
             <Route exact path="/" component={Home} />
             <Route component={() => (<h2>Page introuvable</h2>)} />
