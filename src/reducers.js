@@ -3,6 +3,7 @@
  */
 
 import { combineReducers } from 'redux';
+import counterReducer from './reducers/counterReducer';
 // import languageProviderReducer from './containers/LanguageProvider/reducer';
 // import globalReducer from './containers/App/reducer';
 
@@ -11,6 +12,7 @@ import { combineReducers } from 'redux';
  */
 export default function createReducer(injectedReducers = {}) {
   const rootReducer = combineReducers({
+    counter: counterReducer,
     // language: languageProviderReducer,
     // global: globalReducer,
     ...injectedReducers,
