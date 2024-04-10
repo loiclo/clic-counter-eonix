@@ -47,6 +47,7 @@ button{
   padding: 9px;
   margin: 0 5px;
   border-radius: 10px;
+  font-size: 20px;
 }
 `;
 
