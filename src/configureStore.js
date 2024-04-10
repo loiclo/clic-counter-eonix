@@ -7,7 +7,8 @@ import createSagaMiddleware from 'redux-saga';
 import { routerMiddleware } from 'connected-react-router';
 import createReducer from './reducers';
 
-export default function configureStore(initialState = {}, history) {
+export default function
+(initialState = {}, history) {
   const reduxSagaMonitorOptions = {};
 
   const sagaMiddleware = createSagaMiddleware(reduxSagaMonitorOptions);
