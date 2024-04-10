@@ -1,11 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import {increment, decrement} from '../actions/counterAction'
+import styled from 'styled-components';
 
 function Counter ({counter, onIncrement, onDecrement}){
   return (
+    <CounterStyled>
     <div>
-    Vous avez cliqué {counter} fois
+      <div className="counter-text">Vous avez cliqué {counter} fois</div>
       <div>
         <button onClick={onIncrement}>
           Cliquer ici
@@ -16,6 +18,7 @@ function Counter ({counter, onIncrement, onDecrement}){
         </button>
       </div>
     </div>
+    </CounterStyled>
   )
   }
 
@@ -29,3 +32,23 @@ function Counter ({counter, onIncrement, onDecrement}){
   });
   
   export default connect(mapStateToProps, mapDispatchToProps)(Counter);
+
+const CounterStyled = styled.div`
+display: flex;
+justify-content: center;
+text-align: center;
+
+.counter-text{
+  margin-bottom: 20px; 
+}
+
+button{
+  background-color: aliceblue;
+  padding: 9px;
+  margin: 0 5px;
+  border-radius: 10px;
+  font-size: 20px;
+}
+`;
+
+
