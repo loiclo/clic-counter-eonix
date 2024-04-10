@@ -25,11 +25,17 @@ export default function configureStore(initialState = {}, history) {
       ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({})
       : compose;
   /* eslint-enable */
+  // const store = createStore(
+  //   createReducer(),
+  //   initialState,
+  //   composeEnhancers(...enhancers),
+  //   // eslint-disable-next-line no-underscore-dangle
+  // );
+
   const store = createStore(
-    createReducer(),
+    createReducer(), 
     initialState,
     composeEnhancers(...enhancers),
-    // eslint-disable-next-line no-underscore-dangle
   );
 
   // Extensions

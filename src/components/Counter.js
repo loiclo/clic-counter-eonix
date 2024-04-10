@@ -1,18 +1,8 @@
-import React, {useState} from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
+import {increment, decrement} from '../actions/counterAction'
 
-function Counter (){
-  const [counter, setCounter] = useState(0); // Initialise le compteur à 0
-
-  const onIncrement = () => {
-    setCounter(counter + 1); // Incrémente le compteur 
-  };
-
-  const onDecrement = () => {
-    if (counter > 0) { // Vérifie si le compteur est supérieur à 0 avant de décrémenter
-      setCounter(counter - 1);
-    }
-  };
-
+function Counter ({counter, onIncrement, onDecrement}){
   return (
     <div>
     Vous avez cliqué {counter} fois
@@ -27,7 +17,15 @@ function Counter (){
       </div>
     </div>
   )
-}
+  }
 
-export default Counter;
-
+  const mapStateToProps = (state) => ({
+    counter: state.counter.count,
+  });
+  
+  const mapDispatchToProps = (dispatch) => ({
+    onIncrement: () => dispatch(increment()),
+    onDecrement: () => dispatch(decrement()),
+  });
+  
+  export default connect(mapStateToProps, mapDispatchToProps)(Counter);
